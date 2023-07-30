@@ -30,7 +30,7 @@ if __name__ == "__main__":
         while True:
             now = datetime.now()
             formatted_now = now.strftime("%Y-%m-%d %H:%M:%S")# 转换为你想要的格式
-            random_number = random.uniform(5.9 6.2)
+            random_number = random.uniform(5.9 ,6.2)
             rounded_number = round(random_number, 2)
 
             command_mint_sats = f'ord.exe --bitcoin-data-dir "I:/BitcoinNode/blocks" --cookie-file "I:/BitcoinNode/.cookie" --wallet ac_sats wallet inscribe --postage "330 sats" --csv I:/btc/btcNft/batch.csv --fee-rate {random_number}'
