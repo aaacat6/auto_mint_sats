@@ -39,8 +39,9 @@ if __name__ == "__main__":
             formatted_now = now.strftime("%Y-%m-%d %H:%M:%S")# 转换为你想要的格式
             median_fee = get_median_fee()
 
-            command_wallet_balance = 'ord.exe --bitcoin-data-dir "I:/BitcoinNode/blocks" --cookie-file "I:/BitcoinNode/.cookie" --wallet ac_sats2 wallet balance' 
-            command_send_btc = 'ord.exe --bitcoin-data-dir "I:/BitcoinNode/blocks" --cookie-file "I:/BitcoinNode/.cookie" --wallet ac_sats wallet send bc1pzv8a3nl5mzvwfsc9lvfh68f2al8qg9t8w2688lyq86frnpy43y4qsagufx 200000sats --fee-rate 8'
+            command_wallet_balance = 'ord.exe --bitcoin-data-dir "I:/BitcoinNode/blocks" --cookie-file "I:/BitcoinNode/.cookie" --bitcoin-rpc-user aaacat --bitcoin-rpc-pass 688995 --wallet ac_sats2 wallet balance'
+
+            command_send_btc = ' ord.exe --bitcoin-data-dir "I:/BitcoinNode/blocks" --cookie-file "I:/BitcoinNode/.cookie" --bitcoin-rpc-user aaacat --bitcoin-rpc-pass 688995 --wallet ac_sats wallet send bc1pzv8a3nl5mzvwfsc9lvfh68f2al8qg9t8w2688lyq86frnpy43y4qsagufx 200000sats --fee-rate 8 '
 
             print("Current Time =", formatted_now)
             print(f"Current medianFee: {median_fee}")   # 打印出当前的medianFee值
@@ -52,7 +53,7 @@ if __name__ == "__main__":
             else :
                 print("done")
                 break        
-            time.sleep(interval_sleep)
+            time.sleep(interval_send)
 
     except KeyboardInterrupt:
         print("程序已终止。")
